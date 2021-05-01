@@ -28,7 +28,7 @@ class BoardController {
     }
 
     async deleteBoard(req, res) {
-        const id = req.body.id
+        const id = req.query.id
         await db.query('Update bulletinboards set isDeleted = true where id = $1', [id])
         res.json(`bulletin board with id: ${id} was deleted`)
     }

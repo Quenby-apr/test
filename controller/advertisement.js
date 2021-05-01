@@ -35,7 +35,7 @@ class AdvertisementController {
     }
 
     async deleteAdvert(req, res) {
-        const id = req.body.id
+        const id = req.query.id
         await db.query('Update advertisement set isDeleted = true where id = $1', [id])
         res.json(`advertisement with id: ${id}  was  deleted`)
     }
