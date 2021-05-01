@@ -30,7 +30,7 @@ class UserController {
           const token = jwt.sign({
               login: user.rows[0].login,
               userId: user.rows[0].id
-          }, 'sign', { expiresIn: timeExpire })
+          }, 'jwt', { expiresIn: timeExpire })
           res.status(200).json({ token: `Bearer ${token}` })
       } else {
           res.status(401).json({

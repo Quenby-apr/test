@@ -4,7 +4,7 @@ const db = require('./db')
 
 const options = {
     jwtFromRequest: ExctractJwt.fromAuthHeaderAsBearerToken(),
-    secretOrKey: 'sign'
+    secretOrKey: 'jwt'
 }
 
 module.exports = passport => {
